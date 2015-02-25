@@ -67,7 +67,7 @@ class SimpleRender implements ISimpleRender{
     
     public function getView($name)
     {
-        $view = View::getInstance($name);
+        $view = \Nagi88\SimpleRender\View\View::getInstance($name);
         $view->setPath($this->getPathViews());
         return $view;
     }
