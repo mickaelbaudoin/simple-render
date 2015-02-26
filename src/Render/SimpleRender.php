@@ -97,7 +97,7 @@ class SimpleRender implements ISimpleRender{
         }
         
         if($exist === false){
-            throw new NotLayoutException("layout not found");
+            throw new \Nagi88\SimpleRender\Exception\NotLayoutException("layout not found");
         }
         
         //Buffer
