@@ -86,12 +86,18 @@ class SimpleRender implements ISimpleRender{
             return $view->render();
         }
         
+        $exist = false;
         //Test if layout exist in paths
         foreach($this->pathLayouts as $pathLayout){
             $layout = $pathLayout . $this->getNameLayout() . ".html";
             if(file_exists($layout)){
+                $exist = true;
                 break;
             }
+        }
+        
+        if($exist === false){
+            throw new NotLayoutException("layout not found");
         }
         
         //Buffer
