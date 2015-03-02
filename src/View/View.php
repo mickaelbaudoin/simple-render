@@ -62,7 +62,7 @@ class View implements IView{
         }
         
         if($exist === false){
-            throw new NotViewException("view not found");
+            throw new \Nagi88\SimpleRender\Exception\NotViewException("view not found");
         }
         
         //Extract variables of $this->vars

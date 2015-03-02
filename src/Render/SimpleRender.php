@@ -104,7 +104,6 @@ class SimpleRender implements ISimpleRender{
         
 	}
 
-        //Buffer
         ob_start();
         
         $view->render();
