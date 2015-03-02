@@ -76,24 +76,34 @@ class SimpleRender implements ISimpleRender{
         $this->disableLayout = true;
     }
     
-    public function render($viewName, array $vars = array())
+    public function render($viewName = null, array $vars = array())
     {
-        $view = $this->getView($viewName);
-        $view->setVars($vars);
+
+	if(null === $viewName){
+		$view = $this->getView($viewName);
+		$view->setVars($vars);
+		
+		//Return view without layout
+		if($this->disableLayout){
+		    return $view->render();
+		}
+		
+		$exist = false;
+		//Test if layout exist in paths
+		foreach($this->pathLayouts as $pathLayout){
+		    $layout = $pathLayout . $this->getNameLayout() . ".html";
+		    if(file_exists($layout)){
+			$exist = true;
+		        break;
+		    }
+		}
+		
+		if($exist === false){
+		    throw new NotLayoutException("layout not found");
+		}
         
-        //Return view without layout
-        if($this->disableLayout){
-            return $view->render();
-        }
-        
-        //Test if layout exist in paths
-        foreach($this->pathLayouts as $pathLayout){
-            $layout = $pathLayout . $this->getNameLayout() . ".html";
-            if(file_exists($layout)){
-                break;
-            }
-        }
-        
+	}
+
         //Buffer
         ob_start();
         
