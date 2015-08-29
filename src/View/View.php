@@ -51,7 +51,6 @@ class View implements IView{
     
     public function render()
     {
-        
         $exist = false;
         foreach($this->paths as $path){
             $viewPath = $path . $this->getName() . ".html";

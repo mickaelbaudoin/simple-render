@@ -7,5 +7,5 @@ namespace Nagi88\SimpleRender\Exception;
  *
  * @author mickael baudoin
  */
-class NotLayoutException extends Exception{
+class NotLayoutException extends \Exception{
 }

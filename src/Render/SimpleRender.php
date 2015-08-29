@@ -79,17 +79,20 @@ class SimpleRender implements ISimpleRender{
     public function render($viewName = null, array $vars = array())
     {
 
-	if(null === $viewName){
+    	if(null === $viewName){
+            throw new \Nagi88\SimpleRender\Exception\NotViewException("view not found");
+        }
+
 		$view = $this->getView($viewName);
 		$view->setVars($vars);
 		
-		//Return view without layout
+		//Retourne la vue sans le layout
 		if($this->disableLayout){
 		    return $view->render();
 		}
 		
 		$exist = false;
-		//Test if layout exist in paths
+		//Test si le layout exist
 		foreach($this->pathLayouts as $pathLayout){
 		    $layout = $pathLayout . $this->getNameLayout() . ".html";
 		    if(file_exists($layout)){
@@ -97,12 +100,10 @@ class SimpleRender implements ISimpleRender{
 		        break;
 		    }
 		}
-		
+
 		if($exist === false){
-		    throw new NotLayoutException("layout not found");
+		    throw new \Nagi88\SimpleRender\Exception\NotLayoutException("layout not found");
 		}
-        
-	}
 
         ob_start();
         
