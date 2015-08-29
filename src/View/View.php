@@ -16,6 +16,7 @@ class View implements IView{
     
     protected $view;
 
+    protected $scriptJsPaths = array();
 
     public function __construct($name) {
         $this->name = $name;
@@ -48,6 +49,17 @@ class View implements IView{
         $this->vars = array_merge($this->vars, $vars);
         return $this;
     }
+
+    public function addScriptJsPath($string)
+    {
+        $this->scriptJsPath[] = $string;
+        return $this;
+    }
+
+    public function getScriptJsPaths()
+    {
+        return $this->scriptJsPath;
+    }
     
     public function render()
     {
@@ -69,7 +81,7 @@ class View implements IView{
         extract($this->vars);
         ob_end_flush();
         $view = require $viewPath;
-        
+        error_log($view);
         return $view;
     }
 }

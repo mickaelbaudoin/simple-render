@@ -20,6 +20,8 @@ class SimpleRender implements ISimpleRender{
     protected $view;
     
     protected $disableLayout = false;
+
+    public $placeholderJs = "";
     
     public function setPathLayouts($string)
     {
@@ -75,6 +77,8 @@ class SimpleRender implements ISimpleRender{
     public function disableLayout() {
         $this->disableLayout = true;
     }
+
+
     
     public function render($viewName = null, array $vars = array())
     {
@@ -105,9 +109,19 @@ class SimpleRender implements ISimpleRender{
 		    throw new \Nagi88\SimpleRender\Exception\NotLayoutException("layout not found");
 		}
 
+        
+
         ob_start();
         
         $view->render();
+
+        //Si un path d'un script js est indiquer on l'ajoute a la fin du layout via $this->scriptJsPaths
+        if( count($view->getScriptJsPaths()) > 0 ){
+            foreach($view->getScriptJsPaths() as $jsPath){
+                $this->placeholderJs .= "<script src='" . $jsPath . "'></script>";
+            }
+        }
+
         //On récupère le flux envoyer par le render de la vue
         $content = ob_get_contents();
         //On clean le flux
