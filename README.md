@@ -1,4 +1,7 @@
-<h2>Example</h2>
+
+Un exemple est présenté dans le répertoire Examples.
+
+<h2>Utilisation</h2>
 
 <pre>
 $simpleRender = new \Nagi88\SimpleRender\Render\SimpleRender();
