@@ -1,6 +1,6 @@
 <?php
 
-namespace Nagi88\SimpleRender\Render;
+namespace MickaelBaudoin\SimpleRender\Render;
 
 /**
  *
