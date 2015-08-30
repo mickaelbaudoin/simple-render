@@ -15,9 +15,9 @@ $simpleRender->render("test", array('helloWorld' => 'Hello world'));
 <h2>Exemple layout</h2>
 créer une page html default.html
 <pre>
-  <! doctype html>
-  <html>
-  	<head>
+  "<! doctype html>"
+  "<html>"
+  	"<head>"
   		<meta charset="utf8"/>
   		<title>Test simple render</title>
   		<link rel="stylesheet" type="text/css" href="./css/main.css" />
