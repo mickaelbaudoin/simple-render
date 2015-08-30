@@ -4,7 +4,7 @@ Un exemple est présenté dans le répertoire Examples.
 <h2>Utilisation</h2>
 
 <pre>
-$simpleRender = new \Nagi88\SimpleRender\Render\SimpleRender();
+$simpleRender = new \MickaelBaudoin\SimpleRender\Render\SimpleRender();
 
 
 $simpleRender->setPathLayouts(PATH_APP . "layouts/");
