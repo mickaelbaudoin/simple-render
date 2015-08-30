@@ -1,6 +1,6 @@
 <?php
 
-namespace Nagi88\SimpleRender\View;
+namespace MickaelBaudoin\SimpleRender\View;
 
 /**
  * Description of View
