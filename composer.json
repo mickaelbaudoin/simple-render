@@ -8,6 +8,7 @@
             "email": "mickael.baudoin@gmail.com"
         }
     ],
+    "version": "1.0",
     "require": {},
     "autoload":{
          "psr-4":{
