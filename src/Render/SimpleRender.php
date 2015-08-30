@@ -86,7 +86,7 @@ class SimpleRender implements ISimpleRender{
     {
 
     	if(null === $viewName){
-            throw new \Nagi88\SimpleRender\Exception\NotViewException("view not found");
+            throw new \MickaelBaudoin\SimpleRender\Exception\NotViewException("view not found");
         }
 
 		$view = $this->getView($viewName);
@@ -108,7 +108,7 @@ class SimpleRender implements ISimpleRender{
 		}
 
 		if($exist === false){
-		    throw new \Nagi88\SimpleRender\Exception\NotLayoutException("layout not found");
+		    throw new \MickaelBaudoin\SimpleRender\Exception\NotLayoutException("layout not found");
 		}
 
         
