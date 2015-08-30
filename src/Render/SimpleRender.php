@@ -22,6 +22,8 @@ class SimpleRender implements ISimpleRender{
     protected $disableLayout = false;
 
     public $placeholderJs = "";
+
+    public $title = "";
     
     public function setPathLayouts($string)
     {
@@ -120,6 +122,11 @@ class SimpleRender implements ISimpleRender{
             foreach($view->getScriptJsPaths() as $jsPath){
                 $this->placeholderJs .= "<script src='" . $jsPath . "'></script>";
             }
+        }
+
+        //On test si un titre a été défini par la vue
+        if($view->getTitle() != null){
+            $this->title = $view->getTitle();
         }
 
         //On récupère le flux envoyer par le render de la vue

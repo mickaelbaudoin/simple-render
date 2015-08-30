@@ -18,6 +18,8 @@ class View implements IView{
 
     protected $scriptJsPaths = array();
 
+    protected $title = null;
+
     public function __construct($name) {
         $this->name = $name;
     }
@@ -60,6 +62,17 @@ class View implements IView{
     {
         return $this->scriptJsPath;
     }
+
+    public function setTitle($string)
+    {
+        $this->title = $string;
+        return $this;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
     
     public function render()
     {
@@ -81,7 +94,6 @@ class View implements IView{
         extract($this->vars);
         ob_end_flush();
         $view = require $viewPath;
-        error_log($view);
         return $view;
     }
 }
