@@ -10,9 +10,9 @@ $simpleRender = new \Nagi88\SimpleRender\Render\SimpleRender();
 $simpleRender->setPathLayouts(PATH_APP . "layouts/");
 $simpleRender->setPathViews(PATH_APP . "views/");
 
-//Search default.html and view test.html
+//Recherche le layout default.html et la vue home.html
 $simpleRender->setNameLayout("default");
-$simpleRender->render("test", array('helloWorld' => 'Hello world'));
+$simpleRender->render("home", array('helloWorld' => 'Hello world'));
 </pre>
 
 
