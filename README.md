@@ -9,5 +9,8 @@ $simpleRender->setPathViews(PATH_APP . "views/");
 
 //Search default.html and view test.html
 $simpleRender->setNameLayout("default");
-$simpleRender->render("test", array('test' => 'tefsfsfsfsf'));
+$simpleRender->render("test", array('helloWorld' => 'Hello world'));
 </pre>
+
+
+
