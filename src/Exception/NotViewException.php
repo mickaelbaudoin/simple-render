@@ -1,6 +1,6 @@
 <?php
 
-namespace Nagi88\SimpleRender\Exception;
+namespace MickaelBaudoin\SimpleRender\Exception;
 
 /**
  * Description of notViewException
