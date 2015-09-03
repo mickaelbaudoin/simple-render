@@ -60,7 +60,7 @@ class View implements IView{
 
     public function getScriptJsPaths()
     {
-        return $this->scriptJsPath;
+        return $this->scriptJsPaths;
     }
 
     public function setTitle($string)
