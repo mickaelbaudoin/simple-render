@@ -1,7 +1,5 @@
 
-Un exemple est présenté dans le répertoire Examples.
-
-<h2>Utilisation</h2>
+<h2>Use</h2>
 
 <pre>
 $simpleRender = new \MickaelBaudoin\SimpleRender\Render\SimpleRender();
